@@ -11,6 +11,13 @@ type Mutation {
   addToCart(input: CartItemInput): CartItem
   removeFromCart(name: String): CartItem
   addUser(name: String, balance: Float): User
+  createCart: Cart
+}
+
+type Cart {
+  _id: String
+  userId: String
+  items: [CartItem]
 }
 
 type User {

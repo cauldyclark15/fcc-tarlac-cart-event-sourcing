@@ -20,15 +20,16 @@ const resolvers = {
       }
 
       throw new Error('Name and balance are required');
-    },
-    async addToCart(_, {name, price, userId}, context) {
-        if (input.name && input.price) {
-            const newCartItem = await Cart.create({
-
-            })
-        }
-        const {}
     }
+
+    // async addToCart(_, {name, price, userId}, context) {
+    //     if (input.name && input.price) {
+    //         const newCartItem = await Cart.create({
+
+    //         })
+    //     }
+
+    // }
   }
 };
 
