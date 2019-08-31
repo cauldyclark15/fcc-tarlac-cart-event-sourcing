@@ -1,0 +1,35 @@
+type Query {
+  hello: String
+}
+
+type Subscription {
+  itemAdded: Projection
+  itemRemoved: Projection
+}
+
+type Mutation {
+  addToCart: CartItem
+  removeFromCart: CartItem
+  addUser(name: String, balance: Float): User
+}
+
+type User {
+  _id: String
+  name: String
+  balance: Float
+}
+
+type CartItem {
+  name: String
+  price: Float
+}
+
+type Projection {
+  total: Float
+  remainingBalance: Float
+}
+
+input CartItemInput {
+  name: String
+  price: Float
+}
