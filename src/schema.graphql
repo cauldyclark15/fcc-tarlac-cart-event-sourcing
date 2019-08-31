@@ -8,8 +8,8 @@ type Subscription {
 }
 
 type Mutation {
-  addToCart: CartItem
-  removeFromCart: CartItem
+  addToCart(input: CartItemInput): CartItem
+  removeFromCart(name: String): CartItem
   addUser(name: String, balance: Float): User
 }
 
