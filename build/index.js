@@ -485,11 +485,14 @@ const resolvers = {
       balance
     }, context) {
       if (name && balance) {
-        await _models__WEBPACK_IMPORTED_MODULE_1__["User"].create({
+        const newUser = await _models__WEBPACK_IMPORTED_MODULE_1__["User"].create({
           name,
           balance
         });
+        return newUser;
       }
+
+      throw new Error('Name and balance are required');
     }
 
   }

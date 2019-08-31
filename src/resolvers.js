@@ -11,11 +11,15 @@ const resolvers = {
   Mutation: {
     async addUser(_, { name, balance }, context) {
       if (name && balance) {
-        await User.create({
+        const newUser = await User.create({
           name,
           balance
         });
+
+        return newUser;
       }
+
+      throw new Error('Name and balance are required');
     }
   }
 };
