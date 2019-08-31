@@ -6,7 +6,9 @@ const pubsub = new PubSub();
 
 const resolvers = {
   Query: {
-    hello: () => 'world!'
+    async getUser(_, { id }) {
+      return User.findById(id);
+    }
   },
   Mutation: {
     async addUser(_, { name, balance }, context) {

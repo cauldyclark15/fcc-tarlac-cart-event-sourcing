@@ -1,5 +1,6 @@
 type Query {
   hello: String
+  getUser(id: String!): User
 }
 
 type Subscription {
