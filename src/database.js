@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import moment from 'moment';
 
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
+mongoose.set('useFindAndModify', false);
 
 const db = mongoose.connection;
 db.on(

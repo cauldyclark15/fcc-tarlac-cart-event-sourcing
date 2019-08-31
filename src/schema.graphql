@@ -8,7 +8,7 @@ type Subscription {
 }
 
 type Mutation {
-  addToCart(input: CartItemInput): CartItem
+  addToCart(input: CartItemInput): Cart
   removeFromCart(name: String): CartItem
   addUser(name: String, balance: Float): User
   createCart(userId: String!): Cart
@@ -37,6 +37,7 @@ type Projection {
 }
 
 input CartItemInput {
-  name: String
-  price: Float
+  name: String!
+  price: Float!
+  cartId: String!
 }

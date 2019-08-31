@@ -29,16 +29,15 @@ const resolvers = {
       });
 
       return newCart;
+    },
+
+    async addToCart(_, { input }, context) {
+      await Cart.findByIdAndUpdate(input.cartId, {
+        $push: { items: { name: input.name, price: input.price } }
+      });
+
+      return Cart.findById(input.cartId);
     }
-
-    // async addToCart(_, {name, price, userId}, context) {
-    //     if (input.name && input.price) {
-    //         const newCartItem = await Cart.create({
-
-    //         })
-    //     }
-
-    // }
   }
 };
 
